@@ -40,11 +40,15 @@ public class CalculadorDePalpites {
 		System.out.println("--------------------------");
 		System.out.println("Time:" + time.toString() );
 		System.out.println(" ");
+		System.out.println("Colocação atual: " + colocacaoAtual);
+		System.out.println("Palpite: " + colocacaoPalpite);
+		System.out.println(" ");
 
 		if (_acertouCampeao(colocacaoPalpite, colocacaoAtual)) {
 
 			pontuacaoProPalpite += Pontuacoes.ACERTAR_CAMPEAO.getPontos();
 			System.out.println("Acertou o campeão: " + Pontuacoes.ACERTAR_CAMPEAO.getPontos());
+
 		}
 
 		if (_acertouG4(colocacaoPalpite, colocacaoAtual)) {
@@ -136,7 +140,7 @@ public class CalculadorDePalpites {
 			return diferencaEstaNoIntervalo(colocacaoPalpite, colocacaoAtual, entreInicio, entreFim);
 		}
 
-		if (colocacaoAtual < colocacaoPalpite) {
+		if (colocacaoAtual > colocacaoPalpite) {
 			return diferencaEstaNoIntervalo(colocacaoAtual, colocacaoPalpite, entreInicio, entreFim);
 		}
 

@@ -9,7 +9,7 @@ public class Run {
 		HashMap<Participantes, Integer> classificacao =
 			new CalculadorDePalpites().calculaPalpitesEGeraClassificacao(allPalpites);
 
-		PrinterDeClassificacao.exibeClassificao(classificacao);
+		new PrinterDeClassificacao(classificacao).print();
 		
 	}
 	
